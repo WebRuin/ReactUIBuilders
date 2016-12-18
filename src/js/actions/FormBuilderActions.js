@@ -1,9 +1,8 @@
 import dispatcher from "../dispatcher";
 
-export function createTodo(label, type, size, verb) {
+export function createElement(label) {
   dispatcher.dispatch({
     type: "CREATE_ELEMENT",
-    label,
-    size
+    label
   });
 }

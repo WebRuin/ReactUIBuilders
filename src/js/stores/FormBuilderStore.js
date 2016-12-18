@@ -8,24 +8,22 @@ class FormBuilderStore extends EventEmitter {
     this.formElements = [
       {
         id: 113464613,
-        label: 'Name',
-        size: 35
+        label: 'Name'
       },
       {
         id: 235684679,
-        label: 'Add',
-        size: 40,
+        label: 'Add'
       },
     ];
   }
 
-  createElement(label, size) {
+  createElement(label) {
     const id = Date.now();
+    console.log(label + 'hi')
 
     this.formElements.push({
       id,
-      label,
-      size
+      label
     });
 
     this.emit("change");
@@ -39,8 +37,7 @@ class FormBuilderStore extends EventEmitter {
     switch(action.type) {
       case "CREATE_ELEMENT": {
         this.createElement(
-          action.label,
-          action.size
+          action.label
         );
         break;
       }
